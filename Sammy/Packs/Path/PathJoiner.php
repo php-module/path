@@ -116,7 +116,7 @@ namespace Sammy\Packs\Path {
 
         if (module::definedPath ($pathAlias)) {
           $absolutePath = join (DIRECTORY_SEPARATOR, array_merge (
-            [module::readPath ($pathAlias)],
+            [module::readPath ($pathAlias, $backTrace)],
             array_slice ($pathSlices, 1, count ($pathSlices))
           ));
 
